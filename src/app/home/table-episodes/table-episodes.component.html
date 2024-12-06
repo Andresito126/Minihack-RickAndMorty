@@ -31,7 +31,7 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ episode.air_date }}
                     </th> 
                     <td class="px-6 py-4">{{ episode.episode }}</td>
-                    <td class="px-6 py-4"><button  class="font-medium hover:underline"><img src="icons/eye.svg" alt=""></button></td>               
+                    <td class="px-6 py-4"><button  class="font-medium hover:underline" (click)="viewEpisodeDetails(episode.id)"><img src="icons/eye.svg" alt=""></button></td>               
                 </tr>
             </tbody>
         </table>

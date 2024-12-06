@@ -22,4 +22,9 @@ ngOnInit(): void {
     )
 }
 
+viewEpisodeDetails(id: number): void {
+  console.log(`Ver detalles del episodio con ID: ${id}`);
+  // Aquí puedes redirigir al componente de detalles usando el Router:
+  // this.router.navigate([`/episode-details/${id}`]);
+}
 }
