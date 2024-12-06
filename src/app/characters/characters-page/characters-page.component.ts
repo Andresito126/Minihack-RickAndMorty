@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-characters-page',
@@ -10,7 +12,7 @@ export class CharactersPageComponent implements OnInit {
   characters: any[] = [];
   currentPage: number = 1;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     this.loadCharacters();
@@ -37,13 +39,13 @@ export class CharactersPageComponent implements OnInit {
   }
 
   viewDetails(id: number) {
-    alert(`Detalles del personaje con ID: ${id}`);
-    // Aquí puedes redirigir a una página de detalles.
+    // alert(`Detalles del personaje con ID: ${id}`);
+    this.router.navigate(['/modal-location']);
+
   }
 
   goBack() {
-    // Navegación personalizada para regresar
-    alert('Regresando a la página anterior');
+  this.router.navigate(['']);
   }
 
 }
