@@ -24,24 +24,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr  *ngFor="let episode of episodes" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                       
-                    </th>
-                    <td class="px-6 py-4">
-                                            </td>
-
-                    <td class="px-9 py-4 ">
-                        <button  class="font-medium hover:underline"><img src="icons/eye.svg" alt=""></button>
-                    </td>
-               
-                    
-                    
-
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{episode.name}}    
+                    </th> 
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ episode.air_date }}
+                    </th> 
+                    <td class="px-6 py-4">{{ episode.episode }}</td>
+                    <td class="px-6 py-4"><button  class="font-medium hover:underline"><img src="icons/eye.svg" alt=""></button></td>               
                 </tr>
             </tbody>
         </table>

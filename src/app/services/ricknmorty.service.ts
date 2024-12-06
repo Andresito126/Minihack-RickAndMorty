@@ -18,7 +18,7 @@ export class RicknmortyService {
 
   // RUTAS PARA LUGARES
   getLocations():Observable<{Results: Location[]}> {
-    return this.http.get<{Results: Location[]}>(this.baseURL);
+    return this.http.get<{Results: Location[]}>(`${this.baseURL}/location`);
   }
 
   getLocationByCharacter(id: number): Observable<Location> {
@@ -27,7 +27,7 @@ export class RicknmortyService {
 
   // RUTAS PARA EPISODIOS
   getEpisodes(): Observable< {results: Episode[]} >{
-    return this.http.get< {results: Episode[]} >(this.baseURL);
+    return this.http.get< {results: Episode[]} >(`${this.baseURL}/episode`);
   }
 
   getEpisodeDetails(id: number): Observable<Episode & { characters: string[] }> {
