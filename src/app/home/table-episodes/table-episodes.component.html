@@ -1,0 +1,39 @@
+<main class="main-formulario">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg ml-5 mr-5 mt-10">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Nombre
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Fecha al aire
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <div class="flex items-center">
+                        Episodio
+                        </div>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        <div class="flex items-center">
+                            Ver Más
+                        </div>
+                    </th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let episode of episodes" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{episode.name}}    
+                    </th> 
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ episode.air_date }}
+                    </th> 
+                    <td class="px-6 py-4">{{ episode.episode }}</td>
+                    <td class="px-6 py-4"><button  class="font-medium hover:underline" (click)="viewEpisodeDetails(episode.id)"><img src="icons/eye.svg" alt=""></button></td>               
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>

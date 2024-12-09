@@ -1,0 +1,25 @@
+<div class="div-main">
+    <div class="button-caract-div">
+      <button
+        class="button-caract_button leftPlace text-white px-4 py-1"
+        [ngClass]="{ active: selectedButton === 'Episodes' }"
+        (click)="selectButton('Episodes')"
+      >
+        Episodios
+      </button>
+      <button
+        class="button-caract_button rightPlace text-white px-4 py-1"
+        [ngClass]="{ active: selectedButton === 'Favorites' }"
+        (click)="selectButton('Favorites')"
+      >
+        Favoritos
+      </button>
+    </div>
+  
+    
+    <app-table-episodes *ngIf="selectedButton === 'Episodes'"></app-table-episodes>
+  
+    
+    <app-table-favorites *ngIf="selectedButton === 'Favorites'"></app-table-favorites>
+  </div>
+  
